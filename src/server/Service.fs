@@ -4,19 +4,18 @@ open WebSharper
 open WebSharper.Sitelets
 open Shared
 
-[<Remote>]
 let Services : IApi = {
     GetValue = fun i -> async { return "hellotext" }
 }
 
 WebSharper.Core.Remoting.AddHandler typeof<IApi> Services
 
-type EndPointWithCors =
+type ServiceEndPoint =
     | [<EndPoint "GET /ping">] Ping
 
 type EndPoint =
     | [<EndPoint "/">] Home
-    | [<EndPoint "/">] EndPointWithCors of Cors<EndPointWithCors>
+    | [<EndPoint "/">] EndPointWithCors of Cors<ServiceEndPoint>
     
 let HandleApi ctx endpoint =
     match endpoint with
@@ -26,7 +25,6 @@ let HandleApi ctx endpoint =
 [<Website>]
 let Main =
     Application.MultiPage (fun ctx endpoint ->
-        
         match endpoint with
         | Home -> Content.Text "Service version 1.0"
         | EndPointWithCors endpoint ->
@@ -38,4 +36,3 @@ let Main =
                 )
                 (HandleApi ctx)
     )
-
