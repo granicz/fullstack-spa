@@ -14,4 +14,4 @@ obj/
 /.vscode/
 /.idea/
 *.userwebsharper.log
-/src/shared/websharper.log
+websharper.log
