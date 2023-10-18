@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "chart.js": "^4.4.0",
+    "https": "^1.0.0",
+    "plotly.js-dist-min": "^2.26.2",
+    "plotly.js-locales": "^2.26.2",
+    "vite": "^4.4.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.1.0"
+  }
+}

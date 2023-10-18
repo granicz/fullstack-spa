@@ -1,0 +1,16 @@
+2023-10-12 21:58:39.2022|DEBUG|Program|location of wsfscservice is: C:\Users\Adam\.nuget\packages\websharper.fsharp\7.0.1.342-beta2\tools\net6.0\win-x64 (server side)
+2023-10-12 21:58:39.2022|DEBUG|Program|pipename is: C:\Users\Adam\.nuget\packages\websharper.fsharp\7.0.1.342-beta2\tools\net6.0\win-x64 (server side)
+2023-10-12 21:58:39.2022|DEBUG|Program|Compiling C:\gergo\ws_react_err\src\server\WsReactExample.Server.fsproj
+2023-10-12 21:58:40.3506|TRACE|Program|Server sends: n: F# compilation: 00:00:01.1565727
+2023-10-12 21:58:50.9894|TRACE|Program|Server sends: n: Checking project: 00:00:10.6394082
+2023-10-12 21:58:50.9894|TRACE|Program|Server sends: n: Waiting on merged metadata: 00:00:00.0020613
+2023-10-12 21:58:51.0311|TRACE|Program|Server sends: n: Parsing with FCS: 00:00:00.0395845
+2023-10-12 21:58:51.0311|TRACE|Program|Server sends: n: Analyzing function arguments: 00:00:00.0023411
+2023-10-12 21:58:51.0311|TRACE|Program|Server sends: n: Resolving names: 00:00:00.0015918
+2023-10-12 21:58:51.0311|TRACE|Program|Server sends: n: WebSharper translation: 00:00:00.0013605
+2023-10-12 21:58:51.0311|TRACE|Program|Server sends: n: Source position transformations: 00:00:00.0021986
+2023-10-12 21:58:51.0311|TRACE|Program|Server sends: n: Packaging assembly: 00:00:00.0012307
+2023-10-12 21:58:51.0478|TRACE|Program|Server sends: n: Hashing resources: 00:00:00.0080016
+2023-10-12 21:58:51.1281|TRACE|Program|Server sends: n: Serializing metadata: 00:00:00.0803144
+2023-10-12 21:58:51.1362|TRACE|Program|Server sends: n: Writing resources into assembly: 00:00:00.0081135
+2023-10-12 21:58:51.1362|TRACE|Program|Server sends: x: 0
