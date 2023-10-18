@@ -10,6 +10,8 @@ open WebSharper.Sitelets
 
 [<JavaScript>]
 module Client =
+
+    // Our SPA endpoints
     type EndPoint =
         | [<EndPoint "/">] Home
         | [<EndPoint "/charting">] Charting
@@ -20,8 +22,10 @@ module Client =
     // Install our client-side router and track the current page
     let currentPage = Router.InstallHash Home router
 
+    // The SPA's `index.html` is its own template source
     type MainTemplate = Template<"index.html", ClientLoad.FromDocument, ServerLoad.WhenChanged>
 
+    // Custom widgets created from inner templates
     module Widgets =
         let Menu() =
             // We use hashed subpages, such as /#/charting. This way each page can be refreshed.

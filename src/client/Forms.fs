@@ -14,6 +14,9 @@ module Forms =
     open WebSharper.JavaScript
     open WebSharper.UI.Client
 
+    (*
+     * A form based entirely on a template.
+     *)
     let CreditRequest() =
         Form.Return (fun name requestedLimit options message pp ->
             name, requestedLimit, options, message, pp)
@@ -46,13 +49,15 @@ module Forms =
                 Placeholder: string
             }
 
+        // A template-based textbox that adds visual validation when
+        // triggered by a submitter.
         let ValidatedTextbox (v: Var<_>) (submitter: Submitter<Result<_>>) args =
+            // Retrieve the error message and extra CSS classes for an error state
             let errorMessage, cssTextbox =
                 submitter.View.Through v
                 |> View.Map (function
                     | Result.Success _
                     | Result.Failure [] ->
-                        Console.Log "success"
                         "", ""
                     | Result.Failure errs ->
                         let errors =
@@ -69,6 +74,8 @@ module Forms =
                 .Placeholder(args.Placeholder)
                 .Input(v)
                 .ErrorMessagePlaceholder(
+                    // If there are no error message, display nothing,
+                    // otherwise display an error.
                     errorMessage.Doc(fun msg ->
                         if msg = "" then Doc.Empty else
                             Templates.MainTemplate.TextboxError()
@@ -79,6 +86,11 @@ module Forms =
                 .ExtraCssClassesForTextbox(cssTextbox)
                 .Doc()
 
+    (*
+     * A form whose rendering is built up from smaller widgets.
+     * This makes it easy to provide customization, such as
+     * displaying validation errors, etc.
+     *)
     let ValidatedForm() =
         Form.Return (fun name address -> name, address)
         <*> (Form.Yield "" |> Validation.Is
