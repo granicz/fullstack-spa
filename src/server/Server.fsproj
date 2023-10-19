@@ -8,9 +8,9 @@
     <Compile Include="Startup.fs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="WebSharper" Version="7.0.1.342-beta2" />
-    <PackageReference Include="WebSharper.FSharp" Version="7.0.1.342-beta2" />    
-    <PackageReference Include="WebSharper.AspNetCore" Version="7.0.1.342-beta2" />
+    <PackageReference Include="WebSharper" Version="7.0.3.348-beta2" />
+    <PackageReference Include="WebSharper.FSharp" Version="7.0.3.348-beta2" />    
+    <PackageReference Include="WebSharper.AspNetCore" Version="7.0.3.348-beta2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.fsproj" />
