@@ -29,12 +29,30 @@ module Client =
         let Menu() =
             // We use hashed subpages, such as /#/charting. This way each page can be refreshed.
             [
-                "Home", MainTemplate.DashboardIcon().Doc(), "/#" + router.Link(Home)
-                "Charting", MainTemplate.DashboardIcon().Doc(), "/#" + router.Link(Charting)
-                "Forms", MainTemplate.DashboardIcon().Doc(), "/#" + router.Link(Forms)
+                Home, "Dashboard", MainTemplate.TablesIcon().Doc(), "/#" + router.Link(Home)
+                Charting, "Charting", MainTemplate.ChartsIcon().Doc(), "/#" + router.Link(Charting)
+                Forms, "Forms", MainTemplate.FormsIcon().Doc(), "/#" + router.Link(Forms)
             ]
-            |> List.map (fun (title, icon, targetUrl) ->
+            |> List.map (fun (ep, title, icon, targetUrl) ->
                 MainTemplate.MenuItem()
+                    .ActiveIndicator(
+                        currentPage.View.Map(fun cp ->
+                            // If the current page is active, add an active menu item indicator
+                            if ep = cp then
+                                Templates.MainTemplate.MenuItemActiveIndicator().Doc()
+                            else
+                                Doc.Empty
+                        ) |> Doc.EmbedView
+                    )
+                    .ExtraCssClasses(
+                        currentPage.View.Map(fun cp ->
+                            // If the current page is active, raise the font color
+                            if ep = cp then
+                                "text-gray-800 dark:text-gray-100"
+                            else
+                                ""
+                        )
+                    )
                     .Title(title)
                     .Icon(icon)
                     .TargetUrl(targetUrl)
@@ -44,9 +62,9 @@ module Client =
         let MobileMenu() =
             // We use hashed subpages, such as /#/charting. This way each page can be refreshed.
             [
-                "Home", MainTemplate.DashboardIcon().Doc(), "/#" + router.Link(Home)
-                "Charting", MainTemplate.DashboardIcon().Doc(), "/#" + router.Link(Charting)
-                "Forms", MainTemplate.DashboardIcon().Doc(), "/#" + router.Link(Forms)
+                "Dashboard", MainTemplate.TablesIcon().Doc(), "/#" + router.Link(Home)
+                "Charting", MainTemplate.ChartsIcon().Doc(), "/#" + router.Link(Charting)
+                "Forms", MainTemplate.FormsIcon().Doc(), "/#" + router.Link(Forms)
             ]
             |> List.map (fun (title, icon, targetUrl) ->
                 MainTemplate.MobileMenuItem()

@@ -2,7 +2,6 @@
 
 open WebSharper
 
-[<JavaScript>]
 module DTO =
     type Client =
         {

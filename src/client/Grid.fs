@@ -25,7 +25,6 @@ module Grid =
                         // Render each into a table row
                         txns
                         |> Array.map (fun txn ->
-                            printfn "%A" txn
                             Templates.MainTemplate.ClientTransactionRow()
                                 .AvatarUrl(txn.To.AvatarUrl)
                                 .Name($"{txn.To.FirstName} {txn.To.LastName}")
