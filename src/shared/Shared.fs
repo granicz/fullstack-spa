@@ -22,7 +22,7 @@ module DTO =
             To: Client
             Amount: float
             Status: Status
-            Date: string
+            Date: System.DateTime
         }
 
 (*

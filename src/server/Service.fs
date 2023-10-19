@@ -42,7 +42,7 @@ let server : IApi = {
                 To = randomClient()
                 Amount = float(rnd.Next(0, 999))+float(rnd.Next(0, 99)) / 100.
                 Status = randomStatus()
-                Date = System.DateTime.Today.Subtract(System.TimeSpan(rnd.Next(0, 100), 0, 0, 0, 0)).ToShortDateString()
+                Date = System.DateTime.Today.Subtract(System.TimeSpan(rnd.Next(0, 100), 0, 0, 0, 0))
             }
         async {
             return [| for i in 1 .. 9 -> randomTransaction() |]

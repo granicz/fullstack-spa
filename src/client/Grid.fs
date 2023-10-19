@@ -41,7 +41,7 @@ module Grid =
                                     | Shared.DTO.Status.Expired ->
                                         Templates.MainTemplate.ExpiredStatus().Doc()
                                 )
-                                .Date(txn.Date)
+                                .Date(txn.Date.ToShortDateString())
                                 .Doc()
                         )
                         |> Doc.Concat
