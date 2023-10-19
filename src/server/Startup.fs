@@ -10,7 +10,7 @@ let main args =
     // Add services to the container.
     builder.Services
         .AddWebSharper()
-        .AddWebSharperRemoting<IApi>(Service.Services)
+        .AddWebSharperRemoting<IApi>(Service.server)
     |> ignore
 
     let app = builder.Build()

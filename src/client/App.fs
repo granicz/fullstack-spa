@@ -3,7 +3,6 @@
 open WebSharper
 open WebSharper.JavaScript
 open WebSharper.UI
-open WebSharper.UI.Html
 open WebSharper.UI.Client
 open WebSharper.UI.Templating
 open WebSharper.Sitelets
@@ -59,17 +58,10 @@ module Client =
 
     let HomePage() =
         let server = Remote<Shared.IApi>
-        let fetchVal() = 
-            async {
-                let! hello = server.GetValue(1)
-                printfn $"{hello}"
-            }
-            |> Async.StartImmediate
-        fetchVal()
-        Doc.Concat [
-            h1 [] [text "Home"]
-            p [] [text "This is the home page"]
-        ]
+        Templates.MainTemplate.Tables()
+            .Title("Tables")
+            .TableContainer(Grid.ClientTransactionsGrid(server))
+            .Doc()
     
     let ChartingPage goto =
         MainTemplate.Charts()

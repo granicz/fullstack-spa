@@ -2,11 +2,6 @@
 
 open WebSharper
 open WebSharper.UI
-open WebSharper.UI.Templating
-
-[<JavaScript>]
-module Templates =
-    type MainTemplate = Templating.Template<"index.html", ClientLoad.FromDocument, ServerLoad.WhenChanged>
 
 [<JavaScript>]
 module Forms =
