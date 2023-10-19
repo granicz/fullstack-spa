@@ -163,9 +163,9 @@ let projects =
     ]
 
 Target.create "Clean" (fun _ ->
-    // cleanProject server |> continueOrExitOnFail
-    // cleanProject client |> continueOrExitOnFail
-    // cleanProject shared |> continueOrExitOnFail
+    cleanProject server |> continueOrExitOnFail
+    cleanProject client |> continueOrExitOnFail
+    cleanProject shared |> continueOrExitOnFail
     Shell.cleanDir deployDir
 )
 
@@ -185,8 +185,11 @@ Target.create "Run" (fun _ ->
 )
 
 Target.create "PreBuild" (fun _ ->
-    bld serverDir
-    bld clientDir
+    [|
+        fun () -> bld serverDir
+        fun () -> bld clientDir
+    |]
+    |> Array.Parallel.iter (fun act -> act())
 )
 
 Target.create "Bundle" (fun _ ->

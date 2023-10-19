@@ -7,6 +7,12 @@
       "commands": [
         "femto"
       ]
+    },
+    "dotnet-ws": {
+      "version": "0.1.16",
+      "commands": [
+        "dotnet-ws"
+      ]
     }
   }
 }
