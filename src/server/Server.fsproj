@@ -13,6 +13,6 @@
     <PackageReference Include="WebSharper.AspNetCore" Version="7.0.3.348-beta2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Shared\Shared.fsproj" />
+    <ProjectReference Include="..\shared\Shared.fsproj" />
   </ItemGroup>
 </Project>
