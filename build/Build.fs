@@ -189,7 +189,7 @@ Target.create "PreBuild" (fun _ ->
         fun () -> bld serverDir
         fun () -> bld clientDir
     |]
-    |> Array.Parallel.iter (fun act -> act())
+    |> Seq.iter (fun act -> act())
 )
 
 Target.create "Bundle" (fun _ ->

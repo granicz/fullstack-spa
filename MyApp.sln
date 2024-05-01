@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{058D16DF-B25A-4FF5-A87B-3C97F82509AD}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Client", "src\Client\Client.fsproj", "{01FD8181-E691-490F-89F7-4C5ACD617618}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Client", "src\client\Client.fsproj", "{01FD8181-E691-490F-89F7-4C5ACD617618}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Shared", "src\Shared\Shared.fsproj", "{7003EEBA-8A83-49A3-A140-2E5B1316024A}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Shared", "src\shared\Shared.fsproj", "{7003EEBA-8A83-49A3-A140-2E5B1316024A}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Server", "src\Server\Server.fsproj", "{F8769975-B78E-4C79-A897-3FE60A8CC0C9}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Server", "src\server\Server.fsproj", "{F8769975-B78E-4C79-A897-3FE60A8CC0C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
